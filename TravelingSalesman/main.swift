@@ -8,16 +8,23 @@
 
 import Foundation
 
-MatrixFacade.calculationData = try MatrixImporter.load(from: "had12.dat")
+MatrixFacade.calculationData = try MatrixImporter.load(from: "had20.dat")
 
-let manager = ChromosomeManager(population: 500)
-for _ in 0...1000{
-    manager.generateNewGeneration()
-    print(manager.best.cost)
+let tour = ChromosomeManager()
+let tourStartTime = DispatchTime.now().uptimeNanoseconds
+for _ in 0...GeneticParameters.iterations{
+    tour.generateNewGenerationTour()
+    print(tour.best.cost)
 }
-print(manager.best.cost)
-//let chromosome = Chromosome(fromData: [1,1,1,4,5,6,7,8,9,10,11,12])
-//chromosome.prepareAfterMix()
-//print(chromosome.data)
+print(tour.best.cost)
+print(tour.best.data)
+
+//let roulette = ChromosomeManager()
+//for _ in 0...GeneticParameters.iterations{
+//    roulette.generateNewGenerationRoulette()
+//    print(roulette.best.cost)
+//}
+//print(roulette.best.cost)
+
 
 

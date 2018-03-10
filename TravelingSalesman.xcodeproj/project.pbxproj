@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA3A906C205467C0004D26A5 /* GeneticParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3A906B205467C0004D26A5 /* GeneticParameters.swift */; };
 		AAA0D0F8204C3ACF00CDAFE6 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA0D0F7204C3ACF00CDAFE6 /* main.swift */; };
 		AAA0D137204C3DE200CDAFE6 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA0D126204C3DE100CDAFE6 /* Math.swift */; };
 		AAA0D138204C3DE200CDAFE6 /* MatrixFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA0D127204C3DE100CDAFE6 /* MatrixFacade.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AA3A906B205467C0004D26A5 /* GeneticParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneticParameters.swift; sourceTree = "<group>"; };
 		AAA0D0F4204C3ACF00CDAFE6 /* TravelingSalesman */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TravelingSalesman; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAA0D0F7204C3ACF00CDAFE6 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		AAA0D126204C3DE100CDAFE6 /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
@@ -84,7 +86,6 @@
 				AAA0D134204C3DE200CDAFE6 /* Extensions */,
 				AAA0D125204C3DE100CDAFE6 /* Helpers */,
 				AAA0D12F204C3DE200CDAFE6 /* Structures */,
-				AAA0D133204C3DE200CDAFE6 /* Trash */,
 				AAA0D0F7204C3ACF00CDAFE6 /* main.swift */,
 			);
 			path = TravelingSalesman;
@@ -97,6 +98,7 @@
 				AAA0D127204C3DE100CDAFE6 /* MatrixFacade.swift */,
 				AAA0D128204C3DE100CDAFE6 /* MatrixImporter.swift */,
 				AAA0D129204C3DE100CDAFE6 /* Roulette.swift */,
+				AA3A906B205467C0004D26A5 /* GeneticParameters.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -125,13 +127,6 @@
 				AAA0D131204C3DE200CDAFE6 /* RouleteChamber.swift */,
 			);
 			path = Structures;
-			sourceTree = "<group>";
-		};
-		AAA0D133204C3DE200CDAFE6 /* Trash */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Trash;
 			sourceTree = "<group>";
 		};
 		AAA0D134204C3DE200CDAFE6 /* Extensions */ = {
@@ -203,6 +198,7 @@
 			files = (
 				AAA0D0F8204C3ACF00CDAFE6 /* main.swift in Sources */,
 				AAA0D13D204C3DE200CDAFE6 /* ChromosomeManager.swift in Sources */,
+				AA3A906C205467C0004D26A5 /* GeneticParameters.swift in Sources */,
 				AAA0D13A204C3DE200CDAFE6 /* Roulette.swift in Sources */,
 				AAA0D142204C3DE200CDAFE6 /* ShuffleExtension.swift in Sources */,
 				AAA0D13F204C3DE200CDAFE6 /* RouleteChamber.swift in Sources */,

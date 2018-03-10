@@ -9,24 +9,25 @@
 import Foundation
 
 class ChromosomeManager {
+
     var population = [Chromosome]()
     lazy var best:Chromosome = getBest()
     
-    init(population number:Int){
-        generatePopulation(number: number)
+    init(){
+        generatePopulation()
     }
     
-    func generatePopulation(number:Int){
+    func generatePopulation(){
         if (MatrixFacade.calculationData != nil){
             population.removeAll()
-            for _ in 0..<number{
+            for _ in 0..<GeneticParameters.population{
                 self.population.append(Chromosome())
             }
             best = getBest()
         }
     }
     
-    func generateNewGeneration(){
+    func generateNewGenerationRoulette(){
         var sortedPopulation = rouletteChromosome()
         var newPopulation = [Chromosome]()
         
@@ -37,7 +38,38 @@ class ChromosomeManager {
             newPopulation.append(rightChild)
         }
         population = newPopulation
+        let _ = population.dropLast()
+        population.append(best)
         best = getBest()
+    }
+    
+    func generateNewGenerationTour(){
+        let n = GeneticParameters.population
+        var newPopulation = [Chromosome]()
+        for _ in 0..<n{
+            let mother = tour()
+            let father = tour()
+            let children = mixChromosomes(from: mother, and: father)
+            newPopulation.append(children.0)
+            newPopulation.append(children.1)
+        }
+        population = newPopulation
+        let _ = population.dropLast()
+        population.append(best)
+        best = getBest()
+    }
+    
+    func tour()->Chromosome{
+        let populationSize = population.count
+        var tourArea = [Chromosome]()
+        tourArea.reserveCapacity(GeneticParameters.tourSize)
+        
+        for _ in 0..<GeneticParameters.tourSize{
+            let selectorIndex = Int(arc4random_uniform(UInt32(populationSize)))
+            tourArea.append(population[selectorIndex])
+        }
+        
+        return tourArea.min{ a, b in a.cost < b.cost }!
     }
     
     func mixChromosomes(from leftParent:Chromosome, and rightParent:Chromosome) -> (Chromosome, Chromosome){
@@ -74,18 +106,18 @@ class ChromosomeManager {
     
     func rouletteChromosome() -> [(Chromosome, Chromosome)]{
         let roulette = Roulette()
-
+        
         for person in population{
             let score:Int = Int(2*Double(best.cost)/Double(person.cost))
             roulette.append(RouleteChamber(chromosome: person, weight: score))
         }
-
+        
         var pairs =  [(Chromosome, Chromosome)]()
-
+        
         for _ in 0..<roulette.chambers.count/2{
             pairs.append((roulette.getRandomChromosome(), roulette.getRandomChromosome()))
         }
-
+        
         return pairs
     }
 }

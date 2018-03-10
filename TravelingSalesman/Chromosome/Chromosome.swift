@@ -13,7 +13,6 @@ class Chromosome{
     // Atrybuty klasy //
     var data:[Int]
     lazy var cost = fintessFunction()
-    let mutationPercent = 3
     
     // Konstruktory //
     init(){
@@ -62,16 +61,33 @@ class Chromosome{
         tryMutation()
     }
     
+    // TODO mutacja na gen a nie chromosom
     func tryMutation(){
-        let randomNumber = Int(arc4random_uniform(100)) + 1
-        if randomNumber <= mutationPercent{
-            let n = UInt32(MatrixFacade.calculationData!.n)
-            let firstIndex = Int(arc4random_uniform(n))
-            var secondIndex = Int(arc4random_uniform(n))
-            while firstIndex == secondIndex{
-                secondIndex = Int(arc4random_uniform(n))
+        if let n = MatrixFacade.calculationData?.n{
+            for i in 0..<n{
+                let randomNumber = Int(arc4random_uniform(100)) + 1
+                if randomNumber <= GeneticParameters.mutation{
+                    let firstIndex = i
+                    var secondIndex = i
+                    repeat{
+                        secondIndex = Int(arc4random_uniform(UInt32(n)))
+                    }while firstIndex == secondIndex
+                    data.swapAt(firstIndex, secondIndex)
+                }
             }
-            data.swapAt(firstIndex, secondIndex)
+        }
+        
+        for i in 0..<data.count{
+            let randomNumber = Int(arc4random_uniform(100)) + 1
+            if randomNumber <= GeneticParameters.mutation{
+                let n = UInt32(MatrixFacade.calculationData!.n)
+                let firstIndex = i
+                var secondIndex = Int(arc4random_uniform(n))
+                while firstIndex == secondIndex{
+                    secondIndex = Int(arc4random_uniform(n))
+                }
+                data.swapAt(firstIndex, secondIndex)
+            }
         }
     }
     

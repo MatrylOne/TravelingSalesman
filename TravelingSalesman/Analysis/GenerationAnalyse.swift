@@ -19,4 +19,15 @@ class GenerationAnalyse{
         let row = AnalyseData(worst: min, average: avg, best: max)
         data.append(row)
     }
+    
+    func getCSV() -> String{
+        var text = "id, najgorszy, średnia, najlepszy\n"
+        var counter = 0
+        for element in data{
+            let row = "\(counter), \(element.worst), \(element.average), \(element.best)\n"
+            text.append(row)
+            counter += 1
+        }
+        return text
+    }
 }

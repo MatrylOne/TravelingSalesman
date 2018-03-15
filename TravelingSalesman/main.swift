@@ -8,24 +8,19 @@
 
 import Foundation
 
-MatrixFacade.calculationData = try MatrixImporter.load(from: "had20.dat")
+MatrixFacade.calculationData = try MatrixImporter.load(from: "had18.dat")
 
-var tour = TourFactory()
+let runAnalyzer = AlgorythmAnalyser()
+var population = TourFactory()
 
-let generationData = GenerationAnalyse()
-for i in 0..<GeneticParameters.generations{
-    tour.newGeneration()
-    print("new Generation \(i)")
-    generationData.append(row : tour.analyse())
+for _ in 0..<GeneticParameters.algorythmRuns{
+    let geneticAnalyzer = GenerationAnalyse()
+    for i in 0..<GeneticParameters.generations{
+        print("populacja numer : \(i)")
+        population.newGeneration()
+        geneticAnalyzer.append(row: population.analyse())
+    }
+    runAnalyzer.append(row: geneticAnalyzer)
 }
 
-var i = 0
-print("generacja, najgorszy, sredni, najlepszy")
-for element in generationData.data{
-    print("\(i), \(element.getCSV())")
-    i += 1
-}
-
-
-
-
+print(runAnalyzer.getAverage().getCSV())

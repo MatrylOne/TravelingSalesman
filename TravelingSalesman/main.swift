@@ -8,13 +8,14 @@
 
 import Foundation
 
-MatrixFacade.calculationData = try MatrixImporter.load(from: "had12.dat")
+MatrixFacade.calculationData = try MatrixImporter.load(from: "had20.dat")
 
 var tour = TourFactory()
 
 let generationData = GenerationAnalyse()
-for _ in 0..<GeneticParameters.generations{
+for i in 0..<GeneticParameters.generations{
     tour.newGeneration()
+    print("new Generation \(i)")
     generationData.append(row : tour.analyse())
 }
 
@@ -24,6 +25,7 @@ for element in generationData.data{
     print("\(i), \(element.getCSV())")
     i += 1
 }
+
 
 
 

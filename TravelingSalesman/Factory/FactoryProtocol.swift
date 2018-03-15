@@ -40,14 +40,15 @@ extension  FactoryProtocol{
             newPopulation.append(rightChild)
         }
         population = newPopulation
-//        let _ = population.removeLast()
-//        population.append(best)
-//        best = getBest()
+        let _ = population.removeLast()
+        population.append(best)
+        best = getBest()
     }
     
     func mixChromosomes(from leftParent: Chromosome, and rightParent: Chromosome) -> (Chromosome, Chromosome) {
         let n = MatrixFacade.calculationData!.n
-        let division = Int(arc4random_uniform(UInt32(n - 1))) + 1
+        //let division = Int(arc4random_uniform(UInt32(n - 1))) + 1
+        let division = Int(GeneticParameters.crossIndex * Double(n))
         let leftChildData = Array(leftParent.data[..<division] + rightParent.data[division...])
         let rightChildData = Array(leftParent.data[division...] + rightParent.data[..<division])
         let leftChild = Chromosome(fromData: leftChildData)

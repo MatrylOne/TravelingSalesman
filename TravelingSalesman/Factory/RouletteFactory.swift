@@ -32,7 +32,8 @@ class RouletteFactory: FactoryProtocol {
         let roulette = Roulette()
         
         for person in population{
-            let score:Int = Int(2*Double(best.cost)/Double(person.cost))
+            let score:Int = Int(Double(GeneticParameters.rouleteMultiplier) * Double(best.cost)/Double(person.cost))
+            print(score)
             roulette.append(RouleteChamber(chromosome: person, weight: score))
         }
         

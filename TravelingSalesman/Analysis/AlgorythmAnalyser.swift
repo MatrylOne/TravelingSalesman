@@ -18,20 +18,19 @@ class AlgorythmAnalyser{
     
     func getAverage() -> GenerationAnalyse{
         let avg = GenerationAnalyse()
-        for i in 0..<GeneticParameters.algorythmRuns{
+        for i in 0..<GeneticParameters.generations{
             
             var bestSum = 0
             var worstSum = 0
             var avgSum = 0
             var counter = 0
             
-            for j in 0..<GeneticParameters.generations{
-                worstSum += runs[i].data[j].worst
-                avgSum += runs[i].data[j].average
-                bestSum += runs[i].data[j].best
+            for j in 0..<GeneticParameters.algorythmRuns{
+                worstSum += runs[j].data[i].worst
+                avgSum += runs[j].data[i].average
+                bestSum += runs[j].data[i].best
                 counter += 1
             }
-            print(i)
             avg.append(row: AnalyseData(
                 worst: worstSum/counter,
                 average: avgSum/counter,

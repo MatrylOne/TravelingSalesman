@@ -10,14 +10,12 @@ import Foundation
 
 class Roulette{
     
-    let multiplier = 1
-    
     var chambers = [RouleteChamber]()
     var probabilityArray = [RouleteChamber]()
     
     func append(_ element:RouleteChamber){
         chambers.append(element)
-        let repeats = repeatElement(element, count: Int(element.weight)*multiplier) 
+        let repeats = repeatElement(element, count: element.weight)
         probabilityArray.append(contentsOf: repeats)
     }
     

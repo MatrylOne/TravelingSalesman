@@ -38,7 +38,8 @@ class RouletteFactory: FactoryProtocol {
         
         var pairs =  [(Chromosome, Chromosome)]()
         
-        for _ in 0..<roulette.chambers.count/2{
+        // To jest niebezpieczne
+        for _ in 0..<GeneticParameters.population/2{
             pairs.append((roulette.getRandomChromosome(), roulette.getRandomChromosome()))
         }
         

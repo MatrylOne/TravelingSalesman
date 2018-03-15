@@ -66,12 +66,35 @@ extension  FactoryProtocol{
     func getBest() -> Chromosome {
         var minIndex = 0
         var minScore = population[0].cost
-        for i in 0..<population.count{
+        for i in 0..<GeneticParameters.population{
             if population[i].cost < minScore{
                 minScore = population[i].cost
                 minIndex = i
             }
         }
         return population[minIndex]
+    }
+    
+    func analyse() -> AnalyseData{
+        var costSum = 0
+        var minScore = population[0].cost
+        var maxScore = population[0].cost
+        
+        var minIndex = 0
+        var maxIndex = 0
+        
+        for i in 0..<GeneticParameters.population{
+            if population[i].cost < minScore{
+                minScore = population[i].cost
+                minIndex = i
+            }
+            
+            if population[i].cost > maxScore{
+                maxScore = population[i].cost
+                maxIndex = i
+            }
+            costSum += population[i].cost
+        }
+        return AnalyseData(worst: maxScore, average: costSum/GeneticParameters.population, best: minScore)
     }
 }

@@ -39,7 +39,7 @@ class TourFactory: FactoryProtocol {
     }
     
     func tour()->Chromosome{
-        let populationSize = population.count
+        let populationSize = GeneticParameters.population
         var tourArea = [Chromosome]()
         tourArea.reserveCapacity(GeneticParameters.tourSize)
         

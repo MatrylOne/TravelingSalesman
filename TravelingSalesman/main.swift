@@ -10,7 +10,7 @@ import Foundation
 
 MatrixFacade.calculationData = try MatrixImporter.load(from: "had20.dat")
 
-var tour = TourFactory()
+var tour = RandomFactory()
 let tourStartTime = DispatchTime.now().uptimeNanoseconds
 for _ in 0...GeneticParameters.iterations{
     tour.newGeneration()

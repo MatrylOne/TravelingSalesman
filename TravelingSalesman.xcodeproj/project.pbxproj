@@ -10,6 +10,7 @@
 		AA1376B0205A4DBD00455FCF /* FactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1376AF205A4DBD00455FCF /* FactoryProtocol.swift */; };
 		AA1376B2205A4F3000455FCF /* RouletteFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1376B1205A4F3000455FCF /* RouletteFactory.swift */; };
 		AA1376B4205A4F9800455FCF /* TourFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1376B3205A4F9800455FCF /* TourFactory.swift */; };
+		AA1376B6205A596400455FCF /* RandomFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1376B5205A596400455FCF /* RandomFactory.swift */; };
 		AA3A906C205467C0004D26A5 /* GeneticParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3A906B205467C0004D26A5 /* GeneticParameters.swift */; };
 		AAA0D0F8204C3ACF00CDAFE6 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA0D0F7204C3ACF00CDAFE6 /* main.swift */; };
 		AAA0D137204C3DE200CDAFE6 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA0D126204C3DE100CDAFE6 /* Math.swift */; };
@@ -40,6 +41,7 @@
 		AA1376AF205A4DBD00455FCF /* FactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoryProtocol.swift; sourceTree = "<group>"; };
 		AA1376B1205A4F3000455FCF /* RouletteFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouletteFactory.swift; sourceTree = "<group>"; };
 		AA1376B3205A4F9800455FCF /* TourFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourFactory.swift; sourceTree = "<group>"; };
+		AA1376B5205A596400455FCF /* RandomFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomFactory.swift; sourceTree = "<group>"; };
 		AA3A906B205467C0004D26A5 /* GeneticParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneticParameters.swift; sourceTree = "<group>"; };
 		AAA0D0F4204C3ACF00CDAFE6 /* TravelingSalesman */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TravelingSalesman; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAA0D0F7204C3ACF00CDAFE6 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				AA1376AF205A4DBD00455FCF /* FactoryProtocol.swift */,
 				AA1376B1205A4F3000455FCF /* RouletteFactory.swift */,
 				AA1376B3205A4F9800455FCF /* TourFactory.swift */,
+				AA1376B5205A596400455FCF /* RandomFactory.swift */,
 			);
 			path = Factory;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 				AAA0D13F204C3DE200CDAFE6 /* RouleteChamber.swift in Sources */,
 				AA1376B0205A4DBD00455FCF /* FactoryProtocol.swift in Sources */,
 				AAA0D13B204C3DE200CDAFE6 /* FileError.swift in Sources */,
+				AA1376B6205A596400455FCF /* RandomFactory.swift in Sources */,
 				AA1376B2205A4F3000455FCF /* RouletteFactory.swift in Sources */,
 				AAA0D137204C3DE200CDAFE6 /* Math.swift in Sources */,
 				AAA0D139204C3DE200CDAFE6 /* MatrixImporter.swift in Sources */,

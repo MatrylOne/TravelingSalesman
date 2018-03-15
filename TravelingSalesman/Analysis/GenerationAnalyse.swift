@@ -8,15 +8,15 @@
 
 import Foundation
 
-class RunAnalyser{
-    var analyseData = [AnalyseData]()
+class GenerationAnalyse{
+    var data = [AnalyseData]()
     
     func append(row:AnalyseData){
-        analyseData.append(row)
+        data.append(row)
     }
     
-    func appen(min:Int, avg:Int, max:Int){
+    func append(min:Int, avg:Int, max:Int){
         let row = AnalyseData(worst: min, average: avg, best: max)
-        analyseData.append(row)
+        data.append(row)
     }
 }

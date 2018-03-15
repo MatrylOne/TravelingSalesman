@@ -9,8 +9,10 @@
 import Foundation
 
 class GeneticParameters{
-    static let population = 200
-    static let iterations = 300
+    static let population = 300
+    static let generations = 150
     static let mutation = 10
     static let tourSize = 30
+    
+    static let algorythmRuns = 1
 }

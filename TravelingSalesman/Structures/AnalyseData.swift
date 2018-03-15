@@ -12,4 +12,8 @@ struct AnalyseData{
     let worst:Int
     let average:Int
     let best:Int
+    
+    func getCSV() -> String{
+        return "\(worst), \(average), \(best)"
+    }
 }

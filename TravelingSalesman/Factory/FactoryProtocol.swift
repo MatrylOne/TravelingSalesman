@@ -40,9 +40,9 @@ extension  FactoryProtocol{
             newPopulation.append(rightChild)
         }
         population = newPopulation
-        let _ = population.dropLast()
-        population.append(best)
-        best = getBest()
+//        let _ = population.removeLast()
+//        population.append(best)
+//        best = getBest()
     }
     
     func mixChromosomes(from leftParent: Chromosome, and rightParent: Chromosome) -> (Chromosome, Chromosome) {
@@ -80,18 +80,18 @@ extension  FactoryProtocol{
         var minScore = population[0].cost
         var maxScore = population[0].cost
         
-        var minIndex = 0
-        var maxIndex = 0
+//        var minIndex = 0
+//        var maxIndex = 0
         
         for i in 0..<GeneticParameters.population{
             if population[i].cost < minScore{
                 minScore = population[i].cost
-                minIndex = i
+//                minIndex = i
             }
             
             if population[i].cost > maxScore{
                 maxScore = population[i].cost
-                maxIndex = i
+//                maxIndex = i
             }
             costSum += population[i].cost
         }

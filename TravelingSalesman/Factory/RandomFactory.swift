@@ -31,7 +31,7 @@ class RandomFactory: FactoryProtocol {
     }
     
     func selectPairs() -> [(Chromosome, Chromosome)] {
-        var pairs = [(Chromosome, Chromosome)]()
+        let pairs = [(Chromosome, Chromosome)]()
         return pairs
     }
     

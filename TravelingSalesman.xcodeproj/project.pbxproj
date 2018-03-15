@@ -12,7 +12,8 @@
 		AA1376B4205A4F9800455FCF /* TourFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1376B3205A4F9800455FCF /* TourFactory.swift */; };
 		AA1376B6205A596400455FCF /* RandomFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1376B5205A596400455FCF /* RandomFactory.swift */; };
 		AA1376B8205A6B2C00455FCF /* AnalyseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1376B7205A6B2C00455FCF /* AnalyseData.swift */; };
-		AA1376BB205A6C9500455FCF /* RunAnalyser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1376BA205A6C9500455FCF /* RunAnalyser.swift */; };
+		AA1376BD205A8C6A00455FCF /* AlgorythmAnalyser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1376BC205A8C6A00455FCF /* AlgorythmAnalyser.swift */; };
+		AA1376BF205A8DB500455FCF /* GenerationAnalyse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1376BE205A8DB500455FCF /* GenerationAnalyse.swift */; };
 		AA3A906C205467C0004D26A5 /* GeneticParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3A906B205467C0004D26A5 /* GeneticParameters.swift */; };
 		AAA0D0F8204C3ACF00CDAFE6 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA0D0F7204C3ACF00CDAFE6 /* main.swift */; };
 		AAA0D137204C3DE200CDAFE6 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA0D126204C3DE100CDAFE6 /* Math.swift */; };
@@ -45,7 +46,8 @@
 		AA1376B3205A4F9800455FCF /* TourFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourFactory.swift; sourceTree = "<group>"; };
 		AA1376B5205A596400455FCF /* RandomFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomFactory.swift; sourceTree = "<group>"; };
 		AA1376B7205A6B2C00455FCF /* AnalyseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyseData.swift; sourceTree = "<group>"; };
-		AA1376BA205A6C9500455FCF /* RunAnalyser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunAnalyser.swift; sourceTree = "<group>"; };
+		AA1376BC205A8C6A00455FCF /* AlgorythmAnalyser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorythmAnalyser.swift; sourceTree = "<group>"; };
+		AA1376BE205A8DB500455FCF /* GenerationAnalyse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenerationAnalyse.swift; sourceTree = "<group>"; };
 		AA3A906B205467C0004D26A5 /* GeneticParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneticParameters.swift; sourceTree = "<group>"; };
 		AAA0D0F4204C3ACF00CDAFE6 /* TravelingSalesman */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TravelingSalesman; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAA0D0F7204C3ACF00CDAFE6 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -86,7 +88,8 @@
 		AA1376B9205A6C5C00455FCF /* Analysis */ = {
 			isa = PBXGroup;
 			children = (
-				AA1376BA205A6C9500455FCF /* RunAnalyser.swift */,
+				AA1376BE205A8DB500455FCF /* GenerationAnalyse.swift */,
+				AA1376BC205A8C6A00455FCF /* AlgorythmAnalyser.swift */,
 			);
 			path = Analysis;
 			sourceTree = "<group>";
@@ -110,6 +113,7 @@
 		AAA0D0F6204C3ACF00CDAFE6 /* TravelingSalesman */ = {
 			isa = PBXGroup;
 			children = (
+				AA3A906B205467C0004D26A5 /* GeneticParameters.swift */,
 				AA1376B9205A6C5C00455FCF /* Analysis */,
 				AA1376AE205A4DA100455FCF /* Factory */,
 				AAA0D12C204C3DE200CDAFE6 /* Chromosome */,
@@ -129,7 +133,6 @@
 				AAA0D127204C3DE100CDAFE6 /* MatrixFacade.swift */,
 				AAA0D128204C3DE100CDAFE6 /* MatrixImporter.swift */,
 				AAA0D129204C3DE100CDAFE6 /* Roulette.swift */,
-				AA3A906B205467C0004D26A5 /* GeneticParameters.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -229,10 +232,11 @@
 			files = (
 				AAA0D0F8204C3ACF00CDAFE6 /* main.swift in Sources */,
 				AA3A906C205467C0004D26A5 /* GeneticParameters.swift in Sources */,
-				AA1376BB205A6C9500455FCF /* RunAnalyser.swift in Sources */,
 				AAA0D13A204C3DE200CDAFE6 /* Roulette.swift in Sources */,
 				AAA0D142204C3DE200CDAFE6 /* ShuffleExtension.swift in Sources */,
+				AA1376BF205A8DB500455FCF /* GenerationAnalyse.swift in Sources */,
 				AAA0D13F204C3DE200CDAFE6 /* RouleteChamber.swift in Sources */,
+				AA1376BD205A8C6A00455FCF /* AlgorythmAnalyser.swift in Sources */,
 				AA1376B0205A4DBD00455FCF /* FactoryProtocol.swift in Sources */,
 				AAA0D13B204C3DE200CDAFE6 /* FileError.swift in Sources */,
 				AA1376B6205A596400455FCF /* RandomFactory.swift in Sources */,

@@ -8,23 +8,22 @@
 
 import Foundation
 
-MatrixFacade.calculationData = try MatrixImporter.load(from: "had20.dat")
+MatrixFacade.calculationData = try MatrixImporter.load(from: "had12.dat")
 
 var tour = TourFactory()
-let tourStartTime = DispatchTime.now().uptimeNanoseconds
-for _ in 0...GeneticParameters.iterations{
-    tour.newGeneration()
-    print(tour.best.cost)
-}
-print(tour.best.cost)
-print(tour.best.data)
 
-//let roulette = ChromosomeManager()
-//for _ in 0...GeneticParameters.iterations{
-//    roulette.generateNewGenerationRoulette()
-//    print(roulette.best.cost)
-//}
-//print(roulette.best.cost)
+let generationData = GenerationAnalyse()
+for _ in 0..<GeneticParameters.generations{
+    tour.newGeneration()
+    generationData.append(row : tour.analyse())
+}
+
+var i = 0
+print("generacja, najgorszy, sredni, najlepszy")
+for element in generationData.data{
+    print("\(i), \(element.getCSV())")
+    i += 1
+}
 
 
 

@@ -10,10 +10,10 @@ import Foundation
 
 MatrixFacade.calculationData = try MatrixImporter.load(from: "had20.dat")
 
-let tour = ChromosomeManager()
+var tour = TourFactory()
 let tourStartTime = DispatchTime.now().uptimeNanoseconds
 for _ in 0...GeneticParameters.iterations{
-    tour.generateNewGenerationTour()
+    tour.newGeneration()
     print(tour.best.cost)
 }
 print(tour.best.cost)

@@ -31,7 +31,7 @@ class TourFactory: FactoryProtocol {
     func selectPairs() -> [(Chromosome, Chromosome)] {
         var pairs =  [(Chromosome, Chromosome)]()
         
-        for _ in 0..<GeneticParameters.population{
+        for _ in 0..<GeneticParameters.population/2{
             pairs.append((tour(), tour()))
         }
         

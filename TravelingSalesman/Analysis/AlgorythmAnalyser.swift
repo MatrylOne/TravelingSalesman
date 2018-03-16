@@ -50,7 +50,7 @@ class AlgorythmAnalyser{
         for _ in 0..<GeneticParameters.algorythmRuns{
             let geneticAnalyzer = GenerationAnalyse()
             for _ in 0..<GeneticParameters.generations{
-                //print("populacja numer : \(i)")
+                Swift.print("\(population.best.cost)")
                 population.newGeneration()
                 geneticAnalyzer.append(row: population.analyse())
             }

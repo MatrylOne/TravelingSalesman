@@ -8,6 +8,29 @@
 
 import Foundation
 
+func seventh() throws{
+    let folder = "wykresy/random/"
+    let version = 1
+    
+    MatrixFacade.calculationData = try MatrixImporter.load(from: "had20.dat")
+    GeneticParameters.reset()
+    print("######        Random     ######")
+    var population:FactoryProtocol = RandomFactory()
+    var analyser = AlgorythmAnalyser(population: population)
+    
+    analyser.runAlgorythm()
+    var data = analyser.print()
+    MatrixImporter.save(file: "\(folder)\(version)random.csv", text: data)
+    
+    print("######       Tour     ######")
+    population = TourFactory()
+    analyser = AlgorythmAnalyser(population: population)
+    
+    analyser.runAlgorythm()
+    data = analyser.print()
+    MatrixImporter.save(file: "\(folder)\(version)tour.csv", text: data)
+}
+
 func sixth() throws{
     let folder = "wykresy/versus/"
     let version = 1
@@ -348,7 +371,7 @@ func first() throws {
 
 /// Uruchamianie
 
-try sixth()
+try seventh()
 
 
 ////////////////////

@@ -27,11 +27,24 @@ class RandomFactory: FactoryProtocol {
     }
     
     func newGeneration() {
+        let bestData = best.data
         setup()
+        let _ = population.removeLast()
+        population.append(Chromosome(fromData: bestData))
+        best = getBest()
+    }
+    
+    func mixChromosomes(from leftParent: Chromosome, and rightParent: Chromosome) -> (Chromosome, Chromosome) {
+        return (leftParent, rightParent)
     }
     
     func selectPairs() -> [(Chromosome, Chromosome)] {
-        let pairs = [(Chromosome, Chromosome)]()
+        var pairs = [(Chromosome, Chromosome)]()
+        
+        for _ in 0..<GeneticParameters.population/2{
+            pairs.append((getRandom(), getRandom()))
+        }
+        
         return pairs
     }
     

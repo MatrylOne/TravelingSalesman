@@ -57,4 +57,17 @@ class MatrixImporter{
             throw FileError.RuntimeError("Nie udało się stworzyć struktury danych.")
         }
     }
+    
+    class func save(file:String, text:String){
+        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            
+            let fileURL = dir.appendingPathComponent(file)
+            
+            //writing
+            do {
+                try text.write(to: fileURL, atomically: false, encoding: .utf8)
+            }
+            catch {/* error handling here */}
+        }
+    }
 }

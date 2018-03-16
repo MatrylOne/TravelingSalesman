@@ -15,9 +15,7 @@ class CalculationData{
         self.n = n
         self.flowMatrix = flowMatrix
         self.distanceMatrix = distanceMatrix
-        print("Calculationdata Init")
     }
     deinit {
-        print("Calculationdata Deinit")
     }
 }

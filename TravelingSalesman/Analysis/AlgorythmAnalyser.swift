@@ -11,6 +11,11 @@ import Foundation
 
 class AlgorythmAnalyser{
     var runs = [GenerationAnalyse]()
+    var population:FactoryProtocol
+    
+    init(population:FactoryProtocol){
+        self.population = population
+    }
     
     func append(row:GenerationAnalyse){
         runs.append(row)
@@ -39,5 +44,21 @@ class AlgorythmAnalyser{
         }
         
         return avg
+    }
+    
+    func runAlgorythm(){
+        for _ in 0..<GeneticParameters.algorythmRuns{
+            let geneticAnalyzer = GenerationAnalyse()
+            for _ in 0..<GeneticParameters.generations{
+                //print("populacja numer : \(i)")
+                population.newGeneration()
+                geneticAnalyzer.append(row: population.analyse())
+            }
+            append(row: geneticAnalyzer)
+        }
+    }
+    
+    func print() -> String{
+        return getAverage().getCSV()
     }
 }

@@ -8,6 +8,14 @@
 
 import Foundation
 
+func test(){
+    let father = Chromosome()
+    let mother = Chromosome()
+    
+    print(father)
+    print(mother)
+}
+
 func seventh() throws{
     let folder = "wykresy/random/"
     let version = 1
@@ -371,7 +379,7 @@ func first() throws {
 
 /// Uruchamianie
 
-try seventh()
+try first()
 
 
 ////////////////////
